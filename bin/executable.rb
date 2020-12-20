@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/aztroworld_cli'
+require_relative '../lib/aztro_cli'
 
-AztroworldCli::CLI.new
+AztroCli::CLI.new
