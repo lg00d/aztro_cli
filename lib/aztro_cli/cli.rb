@@ -6,4 +6,25 @@ class AztroCli::CLI
         @sun_signs = ["aquarius", "pisces", "aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "scorpio", "sagittarius", "capricorn"]
         call
     end
+
+    def call
+        puts "Welcome! "
+        puts "To learn more about your sun sign, please enter 'start'"
+        puts "To find your sun sign, please enter 'list'"
+        puts "To exit, please enter 'exit'"
+        menu
+    end
+
+    def menu
+        input = gets.strip.downcase
+        if input == "start"
+            get_horoscope
+        elsif input == "list"
+            list_signs
+        elsif input == "exit"
+           goodbye
+        else
+            invalid_entry
+        end
+    end
 end
