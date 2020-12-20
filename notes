@@ -1,2 +1,11 @@
 Theres no way for the program to infer all of the sun signs
 hard coding was necessary
+
+.new = the class will create a new instance of itself. It will then, internally,
+ call the method initialize on the new object. Doing so it will simply pass all 
+ the arguments that you passed to .new on to the method initialize.
+
+ Require_relative = A subset of require and is a convenient method to use when you are referring to a file 
+ that is relative to the current file you are working on (basically, within the same project directory)
+
+Require = Is a method that is used when you want to reference and execute code that is not written in your current file
