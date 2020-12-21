@@ -34,6 +34,30 @@ class AztroCli::CLI
         end
     end
 
+    def features
+        puts "enter command:"
+
+        input = gets.strip.downcase
+
+        if input == "compatibility"
+            compatibility
+        elsif input == "mood"
+            mood
+        elsif input == "color"
+            color
+        elsif input == "lucky number"
+            lucky_number
+        elsif input == "lucky time"
+            lucky_time
+        elsif input == "exit"
+            goodbye
+        elsif
+            invalid
+        else
+            menu
+        end
+    end
+
     def get_horoscope
         puts "please enter your sign"
         input = gets.strip.downcase
@@ -55,5 +79,33 @@ class AztroCli::CLI
 
     end
 
+    def current_date
+          puts "#{user_object.current_date}"
+       menu
+   end
 
+   def compatibility
+         puts "#{user_object.compatibility}"
+       features
+   end
+
+   def mood
+       puts "#{user_object.mood}"
+       features
+   end
+
+   def color
+       puts "#{user_object.color}"
+       features
+   end
+
+   def lucky_number
+       puts "#{user_object.lucky_number}"
+       features
+   end
+
+   def lucky_time
+       puts "#{user_object.lucky_time}"
+       features
+   end
 end
