@@ -35,7 +35,7 @@ class AztroCli::CLI
     end
 
     def features
-        puts "enter command:"
+        puts "To learn more about your sign, please enter: 'mood', 'compatibility', 'color', 'lucky number, 'lucky time', or 'exit'"
 
         input = gets.strip.downcase
 
@@ -108,4 +108,15 @@ class AztroCli::CLI
        puts "#{user_object.lucky_time}"
        features
    end
+
+   def list_signs
+    api_data.each do |sign| 
+       
+        puts "#{sign.sign_name} , #{sign.date_range}"
+        
+    end
+    puts "===================================="
+    puts "please enter 'start' to learn about your sign!"
+    menu
+    end
 end
