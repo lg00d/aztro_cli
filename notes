@@ -10,4 +10,4 @@ hard coding was necessary
 
 Require = Is a method that is used when you want to reference and execute code that is not written in your current file
 
-select = wil go through an entire array
+select = returns a new object (e.g. array) filled with only those original items where the block you gave it returned true
