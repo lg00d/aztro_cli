@@ -119,4 +119,19 @@ class AztroCli::CLI
     puts "please enter 'start' to learn about your sign!"
     menu
     end
+
+    def goodbye
+        puts "Goodbye!"
+        exit!
+    end
+
+    def invalid_entry
+        puts "Invalid entry. Please try again."
+        menu
+    end
+
+    def invalid
+        puts "Invalid entry. Please try again."
+        features
+    end
 end
