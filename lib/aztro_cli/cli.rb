@@ -1,14 +1,14 @@
 class AztroCli::CLI
-    attr_accessor :user_sign
-    attr_reader :api_data
+    attr_accessor :user_sign, :user_object
+    attr_reader :api_data, :sun_signs
 
     def initialize
-        sun_signs = ["aquarius", "pisces", "aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "scorpio", "sagittarius", "capricorn"]
-    api_data = []
+        @sun_signs = ["aquarius", "pisces", "aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "scorpio", "sagittarius", "capricorn"]
+    @api_data = []
         sun_signs.each do |sign| 
             data = API.get_data(sign)
-           sunsign_object = SunSign.new(sign, data)
-            api_data << sunsign_object
+            sunsign_object = SunSign.new(sign, data)
+            @api_data << sunsign_object
         end
         call
     end
@@ -44,13 +44,16 @@ class AztroCli::CLI
            selected_sign = api_data.select do |sign| 
                 sign.sign_name == user_sign 
             end
-            data = selected_sign.first
-            puts "#{data["current_date"]}, #{data["description"]}"
+            puts selected_sign
+            @user_object = selected_sign.first
+            puts "#{user_object.date_range}, #{user_object.description}"
             features
         else
             puts "sorry, that's not a valid sign"
-            get_horoscope() #try again
+            get_horoscope()
         end
 
     end
+
+
 end
