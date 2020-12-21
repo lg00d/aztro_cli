@@ -9,3 +9,5 @@ hard coding was necessary
  that is relative to the current file you are working on (basically, within the same project directory)
 
 Require = Is a method that is used when you want to reference and execute code that is not written in your current file
+
+select = wil go through an entire array
