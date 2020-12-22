@@ -1,8 +1,6 @@
 # AztroCli
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/aztro_cli`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome! AztroCli is for those who love astrology or those who would like to learn more about sun signs!
 
 ## Installation
 
@@ -21,8 +19,11 @@ Or install it yourself as:
     $ gem install aztro_cli
 
 ## Usage
+```ruby
+require 'aztro_cli'
 
-TODO: Write usage instructions here
+AztroCli::CLI.new
+```
 
 ## Development
 
