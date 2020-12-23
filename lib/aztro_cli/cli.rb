@@ -22,39 +22,43 @@ class AztroCli::CLI
     end
 
     def menu
-        input = gets.strip.downcase
-        if input == "start"
-            get_horoscope
-        elsif input == "list"
-            list_signs
-        elsif input == "exit"
-           goodbye
-        else
-            invalid_entry
+        loop do
+            input = gets.strip.downcase
+            if input == "start"
+                get_horoscope
+            elsif input == "list"
+                list_signs
+            elsif input == "exit"
+                goodbye
+            else
+                invalid_entry
+            end
         end
     end
 
     def features
-        puts "To learn more about your sign, please enter: 'mood', 'compatibility', 'color', 'lucky number, 'lucky time', or 'exit'"
+        puts "To learn more about your sign,"
+        loop  do
+            puts "please enter: 'mood', 'compatibility', 'color', 'lucky number, 'lucky time', or 'exit'"
+            input = gets.strip.downcase
 
-        input = gets.strip.downcase
-
-        if input == "compatibility"
-            compatibility
-        elsif input == "mood"
-            mood
-        elsif input == "color"
-            color
-        elsif input == "lucky number"
-            lucky_number
-        elsif input == "lucky time"
-            lucky_time
-        elsif input == "exit"
-            goodbye
-        elsif
-            invalid
-        else
-            menu
+            if input == "compatibility"
+                compatibility
+            elsif input == "mood"
+                mood
+            elsif input == "color"
+                color
+            elsif input == "lucky number"
+                lucky_number
+            elsif input == "lucky time"
+                lucky_time
+            elsif input == "exit"
+                goodbye
+            elsif
+                invalid
+            else
+                menu
+            end
         end
     end
 
@@ -68,9 +72,8 @@ class AztroCli::CLI
            selected_sign = api_data.select do |sign| 
                 sign.sign_name == user_sign 
             end
-            puts selected_sign
             @user_object = selected_sign.first
-            puts "#{user_object.date_range}, #{user_object.description}"
+            puts "#{user_object.current_date}, #{user_object.description}"
             features
         else
             puts "sorry, that's not a valid sign"
@@ -79,34 +82,30 @@ class AztroCli::CLI
 
     end
 
-    def current_date
-          puts "#{user_object.current_date}"
-       menu
-   end
 
    def compatibility
          puts "#{user_object.compatibility}"
-       features
+       
    end
 
    def mood
        puts "#{user_object.mood}"
-       features
+       
    end
 
    def color
        puts "#{user_object.color}"
-       features
+       
    end
 
    def lucky_number
        puts "#{user_object.lucky_number}"
-       features
+       
    end
 
    def lucky_time
        puts "#{user_object.lucky_time}"
-       features
+       
    end
 
    def list_signs
@@ -117,7 +116,7 @@ class AztroCli::CLI
     end
     puts "===================================="
     puts "please enter 'start' to learn about your sign!"
-    menu
+    
     end
 
     def goodbye
@@ -127,11 +126,10 @@ class AztroCli::CLI
 
     def invalid_entry
         puts "Invalid entry. Please try again."
-        menu
     end
 
     def invalid
         puts "Invalid entry. Please try again."
-        features
+        
     end
 end
