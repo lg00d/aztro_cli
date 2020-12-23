@@ -4,7 +4,7 @@ class AztroCli::CLI
 
     def initialize
         @sun_signs = ["aquarius", "pisces", "aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "scorpio", "sagittarius", "capricorn"]
-    @api_data = []
+        @api_data = []
         sun_signs.each do |sign| 
             data = API.get_data(sign)
             sunsign_object = SunSign.new(sign, data)

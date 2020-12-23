@@ -5,9 +5,14 @@ hard coding was necessary
  call the method initialize on the new object. Doing so it will simply pass all 
  the arguments that you passed to .new on to the method initialize.
 
- Require_relative = A subset of require and is a convenient method to use when you are referring to a file 
- that is relative to the current file you are working on (basically, within the same project directory)
+ Require_relative = referring to a file that is relative to the current file you are working 
+ on (basically, within the same project directory)
 
 Require = Is a method that is used when you want to reference and execute code that is not written in your current file
 
 select = returns a new object (e.g. array) filled with only those original items where the block you gave it returned true
+
+class =
+
+object =
+
