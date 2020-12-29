@@ -1,15 +1,8 @@
 class AztroCli::CLI
     attr_accessor :user_sign, :user_object
-    attr_reader :api_data, :sun_signs
 
     def initialize
-        @sun_signs = ["aquarius", "pisces", "aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "scorpio", "sagittarius", "capricorn"]
-        @api_data = []
-        sun_signs.each do |sign| 
-            data = API.get_data(sign)
-            sunsign_object = SunSign.new(sign, data)
-            @api_data << sunsign_object
-        end
+        @api_data = SunSign.get_api_data()
         call
     end
 
@@ -130,6 +123,6 @@ class AztroCli::CLI
 
     def invalid
         puts "Invalid entry. Please try again."
-        
+        features    
     end
 end

@@ -1,9 +1,8 @@
 Theres no way for the program to infer all of the sun signs
 hard coding was necessary
 
-.new = the class will create a new instance of itself. It will then, internally,
- call the method initialize on the new object. Doing so it will simply pass all 
- the arguments that you passed to .new on to the method initialize.
+.new = the class will create a new instance of itself// call the method initialize on the new object.
+ Doing so it will simply pass all the arguments that you passed to .new on to the method initialize.
 
  Require_relative = referring to a file that is relative to the current file you are working 
  on (basically, within the same project directory)
@@ -12,7 +11,23 @@ Require = Is a method that is used when you want to reference and execute code t
 
 select = returns a new object (e.g. array) filled with only those original items where the block you gave it returned true
 
-class =
+class = A Class Method is a piece of functionality that belongs to that class, but is not tied to any particular single instance.
 
 object =
 
+instance methids :can only be called on a particular instance of the class.
+
+
+changes made: represented my resources as objects instead of hashes
+
+shebang :It tells the program loader what command to use to execute the file
+
+different variables: 4 types, local instance class global
+
+RC :library that makes web requests
+JSON PARSE: parses the response into a hash
+Response.body : the data of the request
+
+self: allows the program to use the data its calling on in other places
+
+each :The each iterator returns all the elements of an array or a hash.
