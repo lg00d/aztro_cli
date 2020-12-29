@@ -59,10 +59,10 @@ class AztroCli::CLI
         puts "please enter your sign"
         input = gets.strip.downcase
 
-        if (sun_signs.include?(input))
+        if (SunSign.sun_signs.include?(input))
             puts "That's a valid sign"
             @user_sign = input
-           selected_sign = api_data.select do |sign| 
+           selected_sign = @api_data.select do |sign| 
                 sign.sign_name == user_sign 
             end
             @user_object = selected_sign.first
@@ -102,7 +102,7 @@ class AztroCli::CLI
    end
 
    def list_signs
-    api_data.each do |sign| 
+    @api_data.each do |sign| 
        
         puts "#{sign.sign_name} , #{sign.date_range}"
         
