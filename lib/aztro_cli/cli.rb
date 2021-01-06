@@ -9,7 +9,10 @@ class AztroCli::CLI
     def call
         puts "Welcome!"
         puts "To learn more about your sun sign, please enter 'start'"
-        puts "To find your sun sign, please enter 'list'"
+        puts "To find your sun sign, please enter 'list'"    
+
+
+        
         puts "To exit, please enter 'exit'"
         menu
     end
